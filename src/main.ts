@@ -8,9 +8,20 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';//Ang
 //a component consists of decorator code and a class
 @Component({
     selector:'my-app', //the css selector for the html el we want the component to load
-    template:'<h1>Ultra Racing</h1>'
+    template:`<h1>{{title}}</h1>
+        <h2>{{carPart.name}}</h2>
+        <p>{{carPart.description}}</p>
+        <p>{{carPart.inStock}}</p>`
 }) //use to apply our component to our class:typescript feature
-class AppComponent{}
+class AppComponent{
+    title="Ultra Racing";
+    carPart={
+        "id":1,
+        "name":'Super Tires',
+        "description":'Thes tires are the very best',
+        "inStock":5
+    };
+}
 
 //main module that loads our components
 @NgModule({
@@ -18,6 +29,7 @@ class AppComponent{}
     imports:[BrowserModule],//loads the required dependencies
     bootstrap:[AppComponent]//the component that gets loaded first
 })
-class AppModule{}
+class AppModule{
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule);//load our AppModule

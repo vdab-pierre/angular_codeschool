@@ -16,12 +16,19 @@ var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic'); /
 //a component consists of decorator code and a class
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = "Ultra Racing";
+        this.carPart = {
+            "id": 1,
+            "name": 'Super Tires',
+            "description": 'Thes tires are the very best',
+            "inStock": 5
+        };
     }
     AppComponent = __decorate([
         //Angular library that will render the website, launch the app
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>Ultra Racing</h1>'
+            template: "<h1>{{title}}</h1>\n        <h2>{{carPart.name}}</h2>\n        <p>{{carPart.description}}</p>\n        <p>{{carPart.inStock}}</p>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
